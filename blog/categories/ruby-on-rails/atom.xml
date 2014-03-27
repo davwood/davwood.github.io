@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: S3, | My Octopress Blog]]></title>
-  <link href="http://davwood.github.io/blog/categories/s3/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ruby-on-rails | My Octopress Blog]]></title>
+  <link href="http://davwood.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
   <updated>2014-03-27T21:15:36+11:00</updated>
   <id>http://davwood.github.io/</id>
@@ -214,6 +214,32 @@ see below:</p>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adventures with Spree Commerce]]></title>
+    <link href="http://davwood.github.io/blog/2014/02/27/adventures-with-spree-commerce/"/>
+    <updated>2014-02-27T08:43:02+11:00</updated>
+    <id>http://davwood.github.io/blog/2014/02/27/adventures-with-spree-commerce</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been busy lately working on a <a href="http://spreecommerce.com/">Spree</a> E-Commerce site. Spree commerce is an open source ruby on rails project that is very active with lots of users and information. The basic spree gem isn&rsquo;t going to be enough for most people to get a useful site up and running. Fortunately there are lots of extensions that can be added in to get you most of the way there.</p>
+
+<p>In my implementation so far I have used the following gems (in addition to the standard gateway and devise):</p>
+
+<ul>
+<li><a href="https://github.com/stefansenk/spree-blogging-spree">spree-blogging-spree</a> &ndash; a simple implementation of a blog within spree. More useful than integrating wordpress for example as it uses a shared database.</li>
+<li><a href="https://github.com/spree/spree_editor">spree_editor</a> &ndash; allows a rich text interface for the blog</li>
+<li><a href="https://github.com/spree/spree_print_invoice">spree_print_invoice</a> &ndash; allows you to generate (and customise) a PDF invoice. Was surprised that this wasn&rsquo;t standard.</li>
+<li><a href="https://github.com/spree/spree_product_zoom">spree_product_zoom</a> &ndash; integrates lightbox zoom functionality so you can show your product images better.</li>
+<li><a href="https://github.com/200Creative/spree_bootstrap_frontend">spree_boostrap_frontened</a> &ndash; switches out the skeleton framework used by spree to the bootstrap framework. I used this so I could have better access to all the bootstrap components as I&rsquo;m already familiar will this.</li>
+</ul>
+
+
+<p>I have found Spree to be an excellent project to use but I certainly had a steep learning curve to get up to speed with Spree and then to understand configuring each and every gem to be used above. So would definitely recommend Spree to fellow ruby on rails developers and anyone else if you are keen to learn and have enough time. There is some good documentation on the <a href="http://guides.spreecommerce.com/">Spree</a> site but lacking as you delve too deep.</p>
+
+<p>It is full scale enterprise solution so not something to take on for a quick job.</p>
+
+<p>That said &ndash; it will be a lot quicker next time to begin with the gems above and then create a theme from there.</p>
 ]]></content>
   </entry>
   

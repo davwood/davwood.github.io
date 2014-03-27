@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: makers-academy, | My Octopress Blog]]></title>
+  <link href="http://davwood.github.io/blog/categories/makers-academy/atom.xml" rel="self"/>
+  <link href="http://davwood.github.io/"/>
+  <updated>2014-03-27T21:15:36+11:00</updated>
+  <id>http://davwood.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Makers Academy Rewound]]></title>
+    <link href="http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/"/>
+    <updated>2014-01-18T20:55:03+11:00</updated>
+    <id>http://davwood.github.io/blog/2014/01/18/makers-academy-rewound</id>
+    <content type="html"><![CDATA[<ul>
+<li>Must do a fun d3 animation here of the 12 weeks.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

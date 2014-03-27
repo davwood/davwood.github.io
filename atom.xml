@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://davwood.github.io/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-03-27T16:02:36+11:00</updated>
+  <updated>2014-03-27T21:15:36+11:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -395,6 +395,57 @@ Follow the steps below.</p>
 <p>It is full scale enterprise solution so not something to take on for a quick job.</p>
 
 <p>That said &ndash; it will be a lot quicker next time to begin with the gems above and then create a theme from there.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Makers Academy Rewound]]></title>
+    <link href="http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/"/>
+    <updated>2014-01-18T20:55:03+11:00</updated>
+    <id>http://davwood.github.io/blog/2014/01/18/makers-academy-rewound</id>
+    <content type="html"><![CDATA[<ul>
+<li>Must do a fun d3 animation here of the 12 weeks.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Journeying into the world of web development]]></title>
+    <link href="http://davwood.github.io/blog/2014/01/15/journeying-into-the-world-of-web-development/"/>
+    <updated>2014-01-15T16:56:15+11:00</updated>
+    <id>http://davwood.github.io/blog/2014/01/15/journeying-into-the-world-of-web-development</id>
+    <content type="html"><![CDATA[<p>So&hellip; I&rsquo;ve been meaning to write a post to reflect just a bit on what the hell happened last year.</p>
+
+<p>I was sailing along in a comfortable corporate job in London. Life was pretty good. Taking trips here and there (Paris one week &ndash; Morocco the next) and then I decided enough was enough. I quit.</p>
+
+<p>I won&rsquo;t pretend it was a surprise. Not something I decided on emotionally, quickly, self-righteously in a moment of clarity. No. I had been uncomfortable with the situation for a long time. Slowly being lulled into inaction by the rhythm of a steady paycheck and the acknowledgement that everyone else was doing it. And that it was all &ldquo;normal&rdquo;. It was &ldquo;Ok&rdquo;. Just ok &ndash; but not great. So anyway &ndash; I was sick of dealing with just Ok.</p>
+
+<p>As I handed in the resignation I got the usual questions.</p>
+
+<p><em>&ldquo;Which company are you going to?&rdquo;</em> <br>
+<em>&ldquo;Are they paying you more?&rdquo;</em> <br>
+<em>&ldquo;Can we pay you more?&rdquo;</em></p>
+
+<p>All I could adequately come up with was some vague notion of &ldquo;travelling&rdquo; which was enough of a reason for many. It then often summoned a certain amount of envy in certain people and surprisingly often ended with a fierce (but unnecessary) declaration of the fact they&rsquo;d love to do that too but had lots of reason why it was just not possible!</p>
+
+<p><em>&ldquo;I&rsquo;d love to do that!.. But I have kids!&rdquo;</em> <br>
+<em>&ldquo;But I have a mortgage&rdquo;</em> <br>
+<em>&ldquo;But I might get a manager job&rdquo;</em></p>
+
+<p>So anyway, we (my girlfriend and I) eventually worked out what the travelling would be. Cycling. London to Paris and then onto Spain. Adventure. And it was awesome.</p>
+
+<p>Of course, this was a bit of a distraction. I needed to decide what was really next. What was going to better than just ok. In 10 years of corporate climbing I&rsquo;d learnt a lot. How to push the boundaries without getting your head knocked off. How to stand out a bit but not too much. How to do the job well.</p>
+
+<p>My role had been as a business analyst. The guy who sits on projects and tries to bridge the gap between the business guys and the IT people. These things often morphed into huge expensive projects with a complex hierarchical system where it can get difficult to get things done.</p>
+
+<p>In the midst of this I often felt a great sense of impotence into not being able to just get things done. My lack of coding knowledge meant that I was always going to have to outsource projects to others. I have always been someone who is keen to learn new things and so I started to try some coding. Of course this began with some MS Excel VBA work but struggled to progress far beyond this. And it wasn&rsquo;t something that was encouraged. I never had access to any of the tools or environments so any experimentation had to be done in my own time.</p>
+
+<p>An ecommerce side-project I had created the need to build a website. A weekend HTML and CSS course at <a href="http://www.generalassembly.com">General Assembly</a> got me started with the basics. I then hacked and failed over and over again until I eventually spat out a working ecommerce website using an opensource php project called <a href="http://www.opencart.com">Opencart</a>. Cool. My first proper website.</p>
+
+<p>I knew I wanted to learn more. I tried some codeacademy courses, some khan acaedemy, and even bought a javascript book that I read but didn&rsquo;t really understand. I needed some help to get over the hump and I knew that I had to dive in deep and a short weekend course just wouldn&rsquo;t cut it.</p>
+
+<p>I eventually found <a href="http://www.makersacademy.com">Makers Academy</a> and it sounded perfect. 12 weeks of intensive web development training in London. Learning to code full time. Every day. This was going to be the way to get over the hump. After mulling it over for a while.. I clicked sign up.</p>
 ]]></content>
   </entry>
   

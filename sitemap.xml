@@ -1,8 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://davwood.github.io/blog/2014/01/15/journeying-into-the-world-of-web-development/
+        </loc>
+        <lastmod>2014-03-27T21:08:21+11:00</lastmod>
+    </url>
+    <url>
+        <loc>http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/</loc>
+        <lastmod>2014-03-27T21:09:21+11:00</lastmod>
+    </url>
+    <url>
         <loc>http://davwood.github.io/blog/2014/02/27/adventures-with-spree-commerce/</loc>
-        <lastmod>2014-03-27T15:51:08+11:00</lastmod>
+        <lastmod>2014-03-27T21:08:50+11:00</lastmod>
     </url>
     <url>
         <loc>http://davwood.github.io/blog/2014/03/10/getting-a-spree-site-onto-heroku/</loc>
@@ -12,19 +22,19 @@
         <loc>
             http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3/
         </loc>
-        <lastmod>2014-03-27T15:51:08+11:00</lastmod>
+        <lastmod>2014-03-27T21:09:09+11:00</lastmod>
     </url>
     <url>
         <loc>http://davwood.github.io/blog/archives/</loc>
-        <lastmod>2014-03-27T15:51:08+11:00</lastmod>
+        <lastmod>2014-03-27T21:09:21+11:00</lastmod>
     </url>
     <url>
         <loc>http://davwood.github.io/blog/</loc>
-        <lastmod>2014-03-27T15:51:08+11:00</lastmod>
+        <lastmod>2014-03-27T21:09:21+11:00</lastmod>
     </url>
     <url>
         <loc>http://davwood.github.io/</loc>
-        <lastmod>2014-03-27T15:51:08+11:00</lastmod>
+        <lastmod>2014-03-27T21:09:21+11:00</lastmod>
     </url>
     <url>
         <loc>http://davwood.github.io/robots.txt</loc>
