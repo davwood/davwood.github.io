@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: S3 | My Octopress Blog]]></title>
+  <link href="http://davwood.github.io/blog/categories/s3/atom.xml" rel="self"/>
+  <link href="http://davwood.github.io/"/>
+  <updated>2014-03-27T16:02:36+11:00</updated>
+  <id>http://davwood.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Setting up Spree to play with Amazon S3]]></title>
+    <link href="http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3/"/>
+    <updated>2014-03-22T10:23:01+11:00</updated>
+    <id>http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3</id>
+    <content type="html"><![CDATA[<p>S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.</p>
+
+<p>Spree used to have S3 configurable as part of the admin back end.
+However, Spree in 2-2-stable has now dropped this integration.
+<a href="https://github.com/spree/spree/commit/b1d6c5e4b9801d888cc76c05116b814945122207">https://github.com/spree/spree/commit/b1d6c5e4b9801d888cc76c05116b814945122207</a>
+We must refer to the paperclip documentation instead.
+<a href="https://github.com/thoughtbot/paperclip">https://github.com/thoughtbot/paperclip</a></p>
+
+<p>But spree has some config options available within initializers/spree.rb
+see below:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Spree</span><span class="o">.</span><span class="n">config</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;   # Example:</span>
+</span><span class='line'><span class="sr">   # Uncomment to override the default site name.</span>
+</span><span class='line'><span class="sr">   config.site_name = &quot;Gazella Running Costumes&quot;</span>
+</span><span class='line'><span class="sr">   config.logo = &quot;store/</span><span class="n">rungazella</span><span class="o">.</span><span class="n">png</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">  #S3 configuration</span>
+</span><span class='line'><span class="s2">  if Rails.env.production? then</span>
+</span><span class='line'><span class="s2">       #production. Store images on S3.</span>
+</span><span class='line'><span class="s2">       # development will default to local storage</span>
+</span><span class='line'><span class="s2">      attachment_config = {</span>
+</span><span class='line'><span class="s2">      s3_credentials: {</span>
+</span><span class='line'><span class="s2">        access_key_id: ENV[&quot;</span><span class="no">S3_KEY</span><span class="s2">&quot;],</span>
+</span><span class='line'><span class="s2">        secret_access_key: ENV[&quot;</span><span class="no">S3_SECRET</span><span class="s2">&quot;],</span>
+</span><span class='line'><span class="s2">        bucket: ENV[&quot;</span><span class="no">S3_BUCKET</span><span class="s2">&quot;],</span>
+</span><span class='line'><span class="s2">      },</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="s2">      storage:        :s3,</span>
+</span><span class='line'><span class="s2">      s3_headers:     { &quot;</span><span class="no">Cache</span><span class="o">-</span><span class="no">Control</span><span class="s2">&quot; =&amp;gt; &quot;</span><span class="n">max</span><span class="o">-</span><span class="n">age</span><span class="o">=</span><span class="mi">31557600</span><span class="s2">&quot; },</span>
+</span><span class='line'><span class="s2">      s3_protocol:    &quot;</span><span class="n">https</span><span class="s2">&quot;,</span>
+</span><span class='line'><span class="s2">      bucket:         ENV[&quot;</span><span class="no">S3_BUCKET</span><span class="s2">&quot;],</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">      path:          &quot;</span><span class="ss">:rails_root</span><span class="o">/</span><span class="kp">public</span><span class="o">/</span><span class="ss">:class</span><span class="o">/</span><span class="ss">:attachment</span><span class="o">/</span><span class="ss">:id</span><span class="o">/</span><span class="ss">:style</span><span class="o">/</span><span class="ss">:basename</span><span class="o">.</span><span class="ss">:extension</span><span class="s2">&quot;,</span>
+</span><span class='line'><span class="s2">      default_url:   &quot;</span><span class="o">/</span><span class="ss">:class</span><span class="o">/</span><span class="ss">:attachment</span><span class="o">/</span><span class="ss">:id</span><span class="o">/</span><span class="ss">:style</span><span class="o">/</span><span class="ss">:basename</span><span class="o">.</span><span class="ss">:extension</span><span class="s2">&quot;,</span>
+</span><span class='line'><span class="s2">      default_style: &quot;</span><span class="n">product</span><span class="s2">&quot;,</span>
+</span><span class='line'><span class="s2">      }</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">      attachment_config.each do |key, value|</span>
+</span><span class='line'><span class="s2">           Spree::Image.attachment_definitions[:attachment][key.to_sym] = value</span>
+</span><span class='line'><span class="s2">      end</span>
+</span><span class='line'><span class="s2"> end</span>
+</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s2">&lt;p&gt;end</span>
+</span><span class='line'><span class="s2">Spree.user_class = &amp;ldquo;Spree::User&amp;rdquo;</span>
+</span><span class='line'><span class="s2">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>note: the environmental variables were then added to heroku using
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>heroku config:set S3_KEY=your_access_key
+</span><span class='line'>heroku config:set S3_SECRET=your_secret_key
+</span><span class='line'>heroku config:set S3_BUCKET=your_bucket_name</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Additional Notes:</h3>
+
+<p>Update to the paperclip defaults for image sizes
+<a href="http://guides.spreecommerce.com/developer/logic.html">http://guides.spreecommerce.com/developer/logic.html</a></p>
+
+<p>To change the paperclip defaults for image sizes I created the file app/models/spree/image_decorator.rb. And added this:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Spree</span><span class="p">:</span><span class="ss">:Image</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">attachment_definitions</span><span class="o">[</span><span class="ss">:attachment</span><span class="o">][</span><span class="ss">:styles</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;mini:     &quot;50x60&amp;gt;&quot;, #used for the thumbnails</span>
+</span><span class='line'><span class="sr">small:    &quot;120x144&amp;gt;&quot;, #used for the product listing</span>
+</span><span class='line'><span class="sr">product:  &quot;300x361&amp;gt;&quot;, #used for the main product page</span>
+</span><span class='line'><span class="sr">large:    &quot;700x841&amp;gt;&quot; #could be used for hovering</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  }</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Uploading Images with Ckeditor</h2>
+
+<p>I had naively thought that updating the above would allow also work for the blog I had added to my site using the <a href="https://github.com/stefansenk/spree-blogging-spree">spree-blogging-spree</a> gem. Unfortunately ckeditor didn&rsquo;t recognise spree straight away but it can be configured with paperclip.</p>
+
+<p>Based on this I could update app/models/ckeditor/picture.rb to:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Ckeditor</span><span class="o">::</span><span class="no">Picture</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">Ckeditor</span><span class="p">:</span><span class="ss">:Asset</span>
+</span><span class='line'>  <span class="n">has_attached_file</span> <span class="ss">:data</span><span class="p">,</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;                styles: { :content =&amp;gt; &#39;600&amp;gt;&#39;, :thumb =&amp;gt; &#39;118x100#&#39; },</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;   s3_credentials: {&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>      <span class="n">access_key_id</span><span class="p">:</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;S3_KEY&quot;</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>      <span class="n">secret_access_key</span><span class="p">:</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;S3_SECRET&quot;</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>      <span class="ss">bucket</span><span class="p">:</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;S3_BUCKET&quot;</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'><span class="ss">storage</span><span class="p">:</span> <span class="ss">:s3</span><span class="p">,</span>
+</span><span class='line'><span class="n">s3_headers</span><span class="p">:</span>     <span class="p">{</span> <span class="s2">&quot;Cache-Control&quot;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s2">&quot;max-age=31557600&quot;</span> <span class="p">},</span>
+</span><span class='line'><span class="n">s3_protocol</span><span class="p">:</span>    <span class="s2">&quot;https&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="ss">bucket</span><span class="p">:</span>         <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;S3_BUCKET&quot;</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'><span class="ss">path</span><span class="p">:</span> <span class="s2">&quot;/:class/:attachment/:id/:style/:basename.:extension&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="n">default_url</span><span class="p">:</span>   <span class="s2">&quot;/:class/:attachment/:id/:style/:basename.:extension&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="n">default_style</span><span class="p">:</span> <span class="s2">&quot;medium&quot;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="n">validates_attachment_size</span> <span class="ss">:data</span><span class="p">,</span> <span class="ss">:less_than</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="n">megabytes</span>
+</span><span class='line'>  <span class="n">validates_attachment_presence</span> <span class="ss">:data</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def url_content&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">url</span><span class="p">(</span><span class="ss">:content</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
