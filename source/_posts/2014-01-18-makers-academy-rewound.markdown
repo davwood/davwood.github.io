@@ -6,7 +6,8 @@ comments: true
 categories: general,makers-academy,d3.js
 ---
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<div id="body">              
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<div id="style">              
     
 
 <style type="text/css">
@@ -68,9 +69,26 @@ rect {
 	font-size: 0.9em;
 	padding-left: 10px;
 }
+
+#option {
+	margin-bottom: 15px;
+}
 </style>
 </div>
+<div id="option">
+    <input name="updateButton" 
+                 type="button" 
+                value="Update" 
+                onclick="redrawLine()" />
+</div>
+<div id="body">
+</div>	
+
 <script type="text/javascript">
+
+function draw() {
+
+$("#body").empty();
 
 var margin = {top: 20, right: 25, bottom: 50, left: 100},
     width = 660 - margin.left - margin.right,
@@ -187,12 +205,26 @@ var path = svg.append("path")
 
 var totalLength = path.node().getTotalLength();
   
-path.attr("stroke-dasharray", totalLength+","+totalLength)
+path
+      .attr("stroke-dasharray", totalLength+","+totalLength)
       .attr("stroke-dashoffset", totalLength)
       .transition()
-      .duration(2400)
+      .duration(2500)
       .ease("linear-in-out")
       .attr("stroke-dashoffset", 0);
+
+}
+
+draw();
+
+function redrawLine() {
+  draw();
+}
+
+// $(window).resize(function() {
+//   draw();
+// });
+
    
 </script>
 
