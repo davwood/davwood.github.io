@@ -255,7 +255,7 @@ A normal day went something like this:
 
 *Makers Academy was generally open from around 8:30am - 9pm so you could stay back if you wanted to.*
 
-{% img images/makersacademy.png MakersAcademy %}
+<img src="{{ root_url }}/blog/images/makersacademy.png" />
 
 ###Fridays
 
