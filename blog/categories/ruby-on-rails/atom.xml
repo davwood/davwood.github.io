@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby-on-rails | Coding Around]]></title>
   <link href="http://davwood.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-02T06:40:54+11:00</updated>
+  <updated>2014-04-02T07:02:19+11:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Dave Wood]]></name>
@@ -18,7 +18,7 @@
     <link href="http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3/"/>
     <updated>2014-03-22T10:23:01+11:00</updated>
     <id>http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3</id>
-    <content type="html"><![CDATA[<p><img src="images/amazon-river.jpg" width="600" height="200" title="Amazon" ></p>
+    <content type="html"><![CDATA[<p><img src="blog/images/amazon-river.jpg" /></p>
 
 <p>S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.</p>
 
