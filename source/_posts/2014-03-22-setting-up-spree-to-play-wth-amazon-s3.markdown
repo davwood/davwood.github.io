@@ -6,6 +6,8 @@ comments: true
 categories: technical, spree, S3, ruby-on-rails
 ---
 
+{% img images/amazon-river.jpg 600 200 Amazon %}
+
 S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.
 
 Spree used to have S3 configurable as part of the admin back end. 

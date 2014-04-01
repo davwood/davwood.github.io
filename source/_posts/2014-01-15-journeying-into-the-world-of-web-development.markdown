@@ -26,6 +26,8 @@ All I could adequately come up with was some vague notion of "travelling" which 
 
 So anyway, we (my girlfriend and I) eventually worked out what the travelling would be. Cycling. London to Paris and then onto Spain. Adventure. And it was awesome.
 
+{% img images/cycle-france.png %}
+
 Of course, this was a bit of a distraction. I needed to decide what was really next. What was going to better than just ok. In 10 years of corporate climbing I'd learnt a lot. How to push the boundaries without getting your head knocked off. How to stand out a bit but not too much. How to do the job well.
 
 My role had been as a business analyst. The guy who sits on projects and tries to bridge the gap between the business guys and the IT people. These things often morphed into huge expensive projects with a complex hierarchical system where it can get difficult to get things done.

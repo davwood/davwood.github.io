@@ -3,7 +3,7 @@ layout: post
 title: "Adventures with Spree Commerce"
 date: 2014-02-27 08:43:02 +1100
 comments: true
-categories: technical, spree, ruby-on-rails
+categories: technical,spree,ruby-on-rails
 ---
 
 I've been busy lately working on a [Spree](http://spreecommerce.com/) E-Commerce site. Spree commerce is an open source ruby on rails project that is very active with lots of users and information. The basic spree gem isn't going to be enough for most people to get a useful site up and running. Fortunately there are lots of extensions that can be added in to get you most of the way there.

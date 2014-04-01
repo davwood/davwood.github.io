@@ -3,14 +3,14 @@ layout: post
 title: "Makers Academy Rewound"
 date: 2014-01-18 20:55:03 +1100
 comments: true
-categories: general, makers-academy, d3.js
+categories: general,makers-academy,d3.js
 ---
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <div id="body">              
     
 
 <style type="text/css">
-svg {
+.svg-section {
 	background-color: #25383C;
 }
 
@@ -110,6 +110,7 @@ var line = d3.svg.line()
 var svg = d3.select("#body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    .attr("class", "svg-section")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -189,7 +190,7 @@ var totalLength = path.node().getTotalLength();
 path.attr("stroke-dasharray", totalLength+","+totalLength)
       .attr("stroke-dashoffset", totalLength)
       .transition()
-      .duration(2000)
+      .duration(2400)
       .ease("linear-in-out")
       .attr("stroke-dashoffset", 0);
    
@@ -221,6 +222,8 @@ A normal day went something like this:
 * 7pm - leave (it was common to do some at home too)
 
 *Makers Academy was generally open from around 8:30am - 9pm so you could stay back if you wanted to.*
+
+{% img images/makersacademy.png MakersAcademy %}
 
 ###Fridays
 
