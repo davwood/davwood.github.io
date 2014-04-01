@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: spree, | My Octopress Blog]]></title>
+  <title><![CDATA[Category: spree, | Coding Around]]></title>
   <link href="http://davwood.github.io/blog/categories/spree/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-01T16:22:46+11:00</updated>
+  <updated>2014-04-01T20:49:48+11:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Dave Wood]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,7 +18,9 @@
     <link href="http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3/"/>
     <updated>2014-03-22T10:23:01+11:00</updated>
     <id>http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3</id>
-    <content type="html"><![CDATA[<p>S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.</p>
+    <content type="html"><![CDATA[<p><img src="images/amazon-river.jpg" width="600" height="200" title="Amazon" ></p>
+
+<p>S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.</p>
 
 <p>Spree used to have S3 configurable as part of the admin back end.
 However, Spree in 2-2-stable has now dropped this integration.
@@ -214,185 +216,6 @@ see below:</p>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Getting a Spree Site onto Heroku]]></title>
-    <link href="http://davwood.github.io/blog/2014/03/10/getting-a-spree-site-onto-heroku/"/>
-    <updated>2014-03-10T09:29:44+11:00</updated>
-    <id>http://davwood.github.io/blog/2014/03/10/getting-a-spree-site-onto-heroku</id>
-    <content type="html"><![CDATA[<p>I had a great Spree E-commerce working fine on the localhost &ndash; and then I needed to get it onto heroku. Easy right? As someone who has used heroku a few times before (but not for a little while) I remembered it was pretty much a simple case of &lsquo;git push heroku master&rsquo;. Nope!!</p>
-
-<p>Below is some coverage of what I needed to do. Hopefully it can be of use.</p>
-
-<p>This was using spree branch &lsquo;2-2-stable&rsquo; with a postgresql database.</p>
-
-<h2>Step 1: Update the web server to unicorn</h2>
-
-<p>Add the gem &lsquo;unicorn&rsquo; and create a file &lsquo;config/unicorn.rb&rsquo;. The put the below into the file:</p>
-
-<pre><code><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">worker_processes</span> <span class="nb">Integer</span><span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;WEB_CONCURRENCY&quot;</span><span class="o">]</span> <span class="o">||</span> <span class="mi">3</span><span class="p">)</span>
-</span><span class='line'><span class="n">timeout</span>
-</span><span class='line'><span class="n">timeout</span> <span class="mi">15</span>
-</span><span class='line'><span class="n">preload_app</span> <span class="kp">true</span>
-</span><span class='line'><span class="n">before_fork</span> <span class="k">do</span> <span class="o">|</span><span class="n">server</span><span class="p">,</span> <span class="n">worker</span><span class="o">|</span>
-</span><span class='line'>  <span class="no">Signal</span><span class="o">.</span><span class="n">trap</span> <span class="s1">&#39;TERM&#39;</span> <span class="k">do</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s1">&#39;Unicorn master intercepting TERM and sending myself QUIT instead&#39;</span>
-</span><span class='line'>    <span class="no">Process</span><span class="o">.</span><span class="n">kill</span> <span class="s1">&#39;QUIT&#39;</span><span class="p">,</span> <span class="no">Process</span><span class="o">.</span><span class="n">pid</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="n">defined?</span><span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="p">)</span> <span class="ow">and</span>
-</span><span class='line'>    <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">disconnect!</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">after_fork</span> <span class="k">do</span> <span class="o">|</span><span class="n">server</span><span class="p">,</span> <span class="n">worker</span><span class="o">|</span>
-</span><span class='line'>  <span class="no">Signal</span><span class="o">.</span><span class="n">trap</span> <span class="s1">&#39;TERM&#39;</span> <span class="k">do</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="s1">&#39;Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT&#39;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="n">defined?</span><span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="p">)</span> <span class="ow">and</span>
-</span><span class='line'>    <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">establish_connection</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-</code></pre>
-
-<ul>
-<li>create a Procfile in the root directory</li>
-<li>in the Procfile write:
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb</span></code></pre></td></tr></table></div></figure></notextile></div></li>
-<li>create a .env file to hold environment variables and add it to .gitignore!</li>
-</ul>
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo &ldquo;RACK_ENV=development&rdquo; >>.env
-</span><span class='line'>echo &ldquo;PORT=3000&rdquo; >> .env
-</span><span class='line'>echo &ldquo;.env&rdquo; >> .gitignore
-</span><span class='line'>git add .gitignore
-</span><span class='line'>git commit -m &ldquo;add .env to .gitignore&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<ul>
-<li>gem install foreman</li>
-<li>foreman start</li>
-</ul>
-
-
-<p>Now running unicorn! :)</p>
-
-<h2>Step 2: Rails App Config Updates</h2>
-
-<ul>
-<li><p>Remove username from database.yml
-Production looks like:
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>production:
-</span><span class='line'>  adapter: postgresql
-</span><span class='line'>  encoding: unicode
-</span><span class='line'>  database: rungazella_production
-</span><span class='line'>  pool: 5
-</span><span class='line'>  password:</span></code></pre></td></tr></table></div></figure></notextile></div></p></li>
-<li><p>I entered in config/applications.rb
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>config.assets.initialize_on_precompile = false</span></code></pre></td></tr></table></div></figure></notextile></div>
-but i read this is outdated and isn’t used anymore</p></li>
-</ul>
-
-
-<p>I also changed config/environments/production.rb to
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>config.serve_static_assets = true</span></code></pre></td></tr></table></div></figure></notextile></div>
-not sure if it did anything</p>
-
-<h2>Step 3: Login to heroku</h2>
-
-<ol>
-<li>If haven’t already setup a login to heroku. then login with heroku login</li>
-<li>heroku create</li>
-<li>add postgresql to your app. you can type: heroku addons:add heroku-postgresql but I had to add it within the heroku web interface. add-ons section.</li>
-<li>Then use the user-env-compile from heroku labs labs:enable user-env-compile -a my app</li>
-</ol>
-
-
-<h2>Step 4: Final Deploy</h2>
-
-<p>There is currently a known problem with spree and pushing it to heroku.
-<a href="https://github.com/spree/spree/issues/3749;">https://github.com/spree/spree/issues/3749;</a> <a href="https://github.com/spree/spree/issues/3688">https://github.com/spree/spree/issues/3688</a>
-This means using the user-env-compile (point 4) above and pre-compiling assets before pushing to heroku.
-Some info here: <a href="https://devcenter.heroku.com/articles/rails-asset-pipeline">https://devcenter.heroku.com/articles/rails-asset-pipeline</a>
-Follow the steps below.</p>
-
-<ol>
-<li>bundle exec rake assets:precompile RAILS_ENV=production</li>
-<li>git add .</li>
-<li>git commit -m “recompiling assets”</li>
-<li>git push origin master</li>
-<li>git push heroku master</li>
-<li>heroku run rake db:migrate &mdash;app my-app</li>
-<li>heroku restart &mdash;app my-app</li>
-</ol>
-
-
-<h2>Step 5: Setup the admin user</h2>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>heroku run rails console
-</span><span class='line'>user = Spree::User.create!(:email => “&lt;a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#97;&#100;&#x6d;&#105;&#110;&#x40;&#x72;&#x75;&#110;&#103;&#97;&#122;&#x65;&#108;&#108;&#x61;&#x2e;&#x63;&#111;&#109;">&#97;&#x64;&#109;&#105;&#x6e;&#x40;&#x72;&#117;&#x6e;&#x67;&#x61;&#x7a;&#x65;&#108;&#108;&#x61;&#46;&#x63;&#x6f;&#109;&lt;/a>", :password => &ldquo;yourpassword&rdquo;)
-</span><span class='line'>user.spree_roles.create!(:name => &ldquo;admin&rdquo;)</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Adventures with Spree Commerce]]></title>
-    <link href="http://davwood.github.io/blog/2014/02/27/adventures-with-spree-commerce/"/>
-    <updated>2014-02-27T08:43:02+11:00</updated>
-    <id>http://davwood.github.io/blog/2014/02/27/adventures-with-spree-commerce</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve been busy lately working on a <a href="http://spreecommerce.com/">Spree</a> E-Commerce site. Spree commerce is an open source ruby on rails project that is very active with lots of users and information. The basic spree gem isn&rsquo;t going to be enough for most people to get a useful site up and running. Fortunately there are lots of extensions that can be added in to get you most of the way there.</p>
-
-<p>In my implementation so far I have used the following gems (in addition to the standard gateway and devise):</p>
-
-<ul>
-<li><a href="https://github.com/stefansenk/spree-blogging-spree">spree-blogging-spree</a> &ndash; a simple implementation of a blog within spree. More useful than integrating wordpress for example as it uses a shared database.</li>
-<li><a href="https://github.com/spree/spree_editor">spree_editor</a> &ndash; allows a rich text interface for the blog</li>
-<li><a href="https://github.com/spree/spree_print_invoice">spree_print_invoice</a> &ndash; allows you to generate (and customise) a PDF invoice. Was surprised that this wasn&rsquo;t standard.</li>
-<li><a href="https://github.com/spree/spree_product_zoom">spree_product_zoom</a> &ndash; integrates lightbox zoom functionality so you can show your product images better.</li>
-<li><a href="https://github.com/200Creative/spree_bootstrap_frontend">spree_boostrap_frontened</a> &ndash; switches out the skeleton framework used by spree to the bootstrap framework. I used this so I could have better access to all the bootstrap components as I&rsquo;m already familiar will this.</li>
-</ul>
-
-
-<p>I have found Spree to be an excellent project to use but I certainly had a steep learning curve to get up to speed with Spree and then to understand configuring each and every gem to be used above. So would definitely recommend Spree to fellow ruby on rails developers and anyone else if you are keen to learn and have enough time. There is some good documentation on the <a href="http://guides.spreecommerce.com/">Spree</a> site but lacking as you delve too deep.</p>
-
-<p>It is full scale enterprise solution so not something to take on for a quick job.</p>
-
-<p>That said &ndash; it will be a lot quicker next time to begin with the gems above and then create a theme from there.</p>
 ]]></content>
   </entry>
   

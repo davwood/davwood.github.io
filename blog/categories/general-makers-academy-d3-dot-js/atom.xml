@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: d3.js | My Octopress Blog]]></title>
-  <link href="http://davwood.github.io/blog/categories/d3-dot-js/atom.xml" rel="self"/>
+  <title><![CDATA[Category: general,makers-academy,d3.js | Coding Around]]></title>
+  <link href="http://davwood.github.io/blog/categories/general-makers-academy-d3-dot-js/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-01T16:22:46+11:00</updated>
+  <updated>2014-04-01T20:49:48+11:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Dave Wood]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -25,7 +25,7 @@
     
 
 <style type="text/css">
-svg {
+.svg-section {
     background-color: #25383C;
 }
 
@@ -127,6 +127,7 @@ var line = d3.svg.line()
 var svg = d3.select("#body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    .attr("class", "svg-section")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -206,7 +207,7 @@ var totalLength = path.node().getTotalLength();
 path.attr("stroke-dasharray", totalLength+","+totalLength)
       .attr("stroke-dashoffset", totalLength)
       .transition()
-      .duration(2000)
+      .duration(2400)
       .ease("linear-in-out")
       .attr("stroke-dashoffset", 0);
    
@@ -248,6 +249,8 @@ Well.. maybe not quite the last line but it cetainly seemed like I wasn&rsquo;t 
 
 
 <p><em>Makers Academy was generally open from around 8:30am &ndash; 9pm so you could stay back if you wanted to.</em></p>
+
+<p><img src="images/makersacademy.png" title="MakersAcademy" ></p>
 
 <h3>Fridays</h3>
 
