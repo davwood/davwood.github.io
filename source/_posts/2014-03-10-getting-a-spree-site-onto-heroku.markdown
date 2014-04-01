@@ -3,7 +3,7 @@ layout: post
 title: "Getting a Spree Site onto Heroku"
 date: 2014-03-10 09:29:44 +1100
 comments: true
-categories: technical, spree, heroku
+categories: technical, spree, heroku, ruby-on-rails
 ---
 
 I had a great Spree E-commerce working fine on the localhost - and then I needed to get it onto heroku. Easy right? As someone who has used heroku a few times before (but not for a little while) I remembered it was pretty much a simple case of 'git push heroku master'. Nope!!
