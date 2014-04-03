@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "D3 "
+title: "D3 beginnings"
 date: 2014-03-28 14:20:04 +1100
 comments: true
 categories: 
@@ -8,7 +8,7 @@ categories:
 
 <style type="text/css">
 
-h1#d3heading {
+#d3heading {
   	text-rendering: optimizeLegibility;
   	color: #555 !important;
 	font-size: 64px;
@@ -56,4 +56,13 @@ h1#d3heading {
   Data-Driven Documents
 </h1>
 
-I'm currently using d3
+<p></p>
+
+I'm currently using [d3.js](http://d3js.org) to play around with some data and produce visualisations. It is an awesome javascript library from [Mike Bostock](http://bost.ocks.org/mike/) who is one of the main guys behind the great visualisations you see at the [New York Times](http://www.nytimes.com/newsgraphics/2013/12/30/year-in-interactive-storytelling/). He seems to be a prolific producer of work. Between github, google groups, other forums, and holding down a day job - he must be a busy guy.
+
+I highly recommend you check [it](http://d3js.org) out. I'll be posting some d3 examples here shortly.
+Check out my initial play with a line chart [here.]({{ root_url }}/blog/2014/01/18/makers-academy-rewound/)
+
+Also notice the D3 image above. It is from the main [d3](http://d3js.org) page and is written entirely in SVG. Pretty cool. 
+
+
