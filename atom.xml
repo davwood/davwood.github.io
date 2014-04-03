@@ -4,20 +4,20 @@
   <title><![CDATA[Coding Around]]></title>
   <link href="http://davwood.github.io/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-02T07:02:19+11:00</updated>
+  <updated>2014-04-03T17:39:26+11:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Dave Wood]]></name>
-    
+    <email><![CDATA[davwood_1@yahoo.com.au]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[D3 ]]></title>
-    <link href="http://davwood.github.io/blog/2014/03/28/d3/"/>
+    <title type="html"><![CDATA[D3 beginnings]]></title>
+    <link href="http://davwood.github.io/blog/2014/03/28/d3-beginnings/"/>
     <updated>2014-03-28T14:20:04+11:00</updated>
-    <id>http://davwood.github.io/blog/2014/03/28/d3</id>
+    <id>http://davwood.github.io/blog/2014/03/28/d3-beginnings</id>
     <content type="html"><![CDATA[
 
 
@@ -59,7 +59,17 @@
 </h1>
 
 
-<p>I&rsquo;m currently using d3</p>
+
+
+<p></p>
+
+
+<p>I&rsquo;m currently using <a href="http://d3js.org">d3.js</a> to play around with some data and produce visualisations. It is an awesome javascript library from <a href="http://bost.ocks.org/mike/">Mike Bostock</a> who is one of the main guys behind the great visualisations you see at the <a href="http://www.nytimes.com/newsgraphics/2013/12/30/year-in-interactive-storytelling/">New York Times</a>. He seems to be a prolific producer of work. Between github, google groups, other forums, and holding down a day job &ndash; he must be a busy guy.</p>
+
+<p>I highly recommend you check <a href="http://d3js.org">it</a> out. I&rsquo;ll be posting some d3 examples here shortly.
+Check out my initial play with a line chart <a href="http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/">here.</a></p>
+
+<p>Also notice the D3 image above. It is from the main <a href="http://d3js.org">d3</a> page and is written entirely in SVG. Pretty cool.</p>
 ]]></content>
   </entry>
   
@@ -68,7 +78,7 @@
     <link href="http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3/"/>
     <updated>2014-03-22T10:23:01+11:00</updated>
     <id>http://davwood.github.io/blog/2014/03/22/setting-up-spree-to-play-wth-amazon-s3</id>
-    <content type="html"><![CDATA[<p><img src="blog/images/amazon-river.jpg" /></p>
+    <content type="html"><![CDATA[<p><img src="http://davwood.github.io/blog/images/amazon-river.jpg" /></p>
 
 <p>S3 is needed to host images when using heroku or other similar services (like ninefold). This is because heroku’s filesystem is readonly, so when uploading images (except with deploy) we need to use an off-site sever such as S3.</p>
 
