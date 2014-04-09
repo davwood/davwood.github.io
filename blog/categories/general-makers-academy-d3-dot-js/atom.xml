@@ -4,7 +4,7 @@
   <title><![CDATA[Category: general,makers-academy,d3.js | Coding Around]]></title>
   <link href="http://davwood.github.io/blog/categories/general-makers-academy-d3-dot-js/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-03T17:39:26+11:00</updated>
+  <updated>2014-04-09T13:04:25+10:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Dave Wood]]></name>
@@ -18,10 +18,7 @@
     <link href="http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/"/>
     <updated>2014-01-18T20:55:03+11:00</updated>
     <id>http://davwood.github.io/blog/2014/01/18/makers-academy-rewound</id>
-    <content type="html"><![CDATA[<script src="http://d3js.org/d3.v3.min.js"></script>
-
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <content type="html"><![CDATA[<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 
 
 <div id="style">              
