@@ -5,7 +5,7 @@ date: 2014-01-18 20:55:03 +1100
 comments: true
 categories: general,makers-academy,d3.js
 ---
-<script src="http://d3js.org/d3.v3.min.js"></script>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <div id="style">              
     
