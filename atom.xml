@@ -4,7 +4,7 @@
   <title><![CDATA[Coding Around]]></title>
   <link href="http://davwood.github.io/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-09T13:04:25+10:00</updated>
+  <updated>2014-04-10T11:14:44+10:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Dave Wood]]></name>
@@ -313,7 +313,7 @@ I also used CSS to colour in different countries based on the classes I had give
 
 <p>This was a bit of a shortcut as it may have been easier to update my data in step 1 with the countries I had visited and could then just colour them as a group.</p>
 
-<p>In any case I really like the finished product. Very elegant. Now I clearly need to get cracking and travel to Africa and Asia.</p>
+<p>In any case I really like the finished product. Very nice. Now I clearly need to get cracking and travel to Africa and Asia. :)</p>
 ]]></content>
   </entry>
   
@@ -769,10 +769,7 @@ Follow the steps below.</p>
     <link href="http://davwood.github.io/blog/2014/01/18/makers-academy-rewound/"/>
     <updated>2014-01-18T20:55:03+11:00</updated>
     <id>http://davwood.github.io/blog/2014/01/18/makers-academy-rewound</id>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-
-
-<div id="style">              
+    <content type="html"><![CDATA[<div id="style">              
     
 
 <style type="text/css">
