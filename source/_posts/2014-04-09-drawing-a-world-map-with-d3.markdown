@@ -267,4 +267,4 @@ I also used CSS to colour in different countries based on the classes I had give
 
 This was a bit of a shortcut as it may have been easier to update my data in step 1 with the countries I had visited and could then just colour them as a group. 
 
-In any case I really like the finished product. Very elegant. Now I clearly need to get cracking and travel to Africa and Asia. 
+In any case I really like the finished product. Very nice. Now I clearly need to get cracking and travel to Africa and Asia. :) 
