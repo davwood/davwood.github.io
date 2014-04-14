@@ -12,7 +12,7 @@
     <title>This is the title for you homepage - Coding Around</title>
     <meta name="author" content="Dave Wood">
     
-    <meta name="description" content="Hear no evil Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, facilis illo magni nobis ea quibusdam blanditiis officia ex dolorum &hellip;">
+    <meta name="description" content="Web Developer Web development with a focus on the ruby on rails framework. A fun, modern and fast way to craft software. Data Visualisation &hellip;">
     
     <meta name="viewport" content="width=device-width">
     <link rel="canonical" href="http://davwood.github.io">
@@ -29,7 +29,9 @@
       <div class="grid-wrapper">
   <div class="grid">
 
-    <!-- d3 libraries -->
+    
+<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,300italic,700italic' rel='stylesheet' type='text/css'>
+<!-- d3 libraries -->
 <script type="text/javascript" src="/javascripts/d3.v3.min.js"></script>
 <script type="text/javascript" src="/javascripts/d3.geo.projection.v0.min.js"></script>
 <script type="text/javascript" src="/javascripts/topojson.v1.min.js"></script>
@@ -43,7 +45,7 @@
   <nav>
     <input type="checkbox" id="toggle">
 <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
-<ul class="menu pull-right">
+<ul class="menu">
   <li><a href="/">Home</a></li>
   <li><a href="/blog/">Blog</a></li>
 </ul>
@@ -55,28 +57,50 @@
     </header>
 
     
-      <div class="hero" style="background-image: url('/images/swiss-alps-2012.png');">
+      <!-- <div class="hero" style="background-image: url('/images/swiss-alps-2012.png');"> -->
+<div class="home-section sydney">
   <div class="grid-wrapper">
-    <div class="grid flex">
-      <div class="grid__item flex__item two-fifths palm-one-whole avatar">
-        <img class="gravatar" src="/images/gravatar.jpg" alt="Dave Wood's Picture" data-gravatar="davwood_1@yahoo.com.au">
+    <div class=" grid flex">
+      <div class="grid__item flex__item two-fifths lap-one-whole palm-one-whole">
+        <div id="tree">
+          <p></p>
+        </div>
+        <h3>I make websites and visualise data. I live in Sydney, Australia. 
+          I write about things <a href="/blog">here.</a></h3> 
       </div>
-      <div class="grid__item flex__item three-fifths palm-one-whole">
-       <h1>Dave Wood</h1>
- <hr>
- <p class="lead">
-Hey I'm Dave. I live in Sydney, Australia. I make data visualisations, websites and  ruby on Rails Web developer, blogger, mountaineer, marathoner living in Sydney, Australia.  
-</p>
+      <div id="sydney" class="grid__item flex__item three-fifths lap-one-whole palm-one-whole">
       </div>
     </div>
   </div>
-
-  <div class="credit">
-    <p>
-      Swiss Alps 2012
-    </p>
+</div>
+<div class="home-section worldmap">
+  <div class="grid-wrapper">
+    <div class=" grid flex">
+      <div id="worldmap" class="grid__item flex__item three-fifths palm-one-whole">
+      </div>
+      <div class="grid__item flex__item two-fifths palm-one-whole">
+        <h4>Data visualisation </h4>
+        <p>I enjoy telling stories with data. Often using the excellent d3 javascript library.</p>
+      </div>
+    </div>
   </div>
 </div>
+<div class="home-section sublime">
+  <div class="grid-wrapper">
+    <div class=" grid flex">
+      <div class="grid__item flex__item two-fifths palm-one-whole">
+        <h4>Web development</h4>
+        <p>Web development with a focus on the ruby on rails framework. 
+          A fun, modern and fast way to craft software. </p>
+      </div>
+      <div id="sublime" class="grid__item flex__item three-fifths palm-one-whole">
+        <p>hi</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
 
     
 
@@ -88,8 +112,8 @@ Hey I'm Dave. I live in Sydney, Australia. I make data visualisations, websites 
 
           
 
-<div class="grid-wrapper">
-  <div class="grid">
+ <div class="grid-wrapper">
+ <!--  <div class="grid">
     <div class="grid__item one-third lap-one-whole palm-one-whole usp">
       <div class="grid">
         <div class="grid__item one-whole lap-one-third">
@@ -99,10 +123,10 @@ Hey I'm Dave. I live in Sydney, Australia. I make data visualisations, websites 
         </div>
 
         <div class="grid__item one-whole lap-two-thirds">
-          <h2 class="title">Hear no evil</h2>
+          <h2 class="title">Web Developer</h2>
 <hr>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, facilis illo magni nobis ea quibusdam blanditiis officia ex dolorum laboriosam dolor earum inventore aperiam nam molestiae. Aperiam, est temporibus officiis.
+Web development with a focus on the ruby on rails framework. A fun, modern and fast way to craft software.
 </p>
         </div>
       </div>
@@ -117,10 +141,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, facilis illo
         </div>
 
         <div class="grid__item one-whole lap-two-thirds">
-          <h2 class="title">See no evil</h2>
+          <h2 class="title">Data Visualisation</h2>
 <hr>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, quia magni ipsum sapiente libero perspiciatis adipisci quibusdam nam nemo aut asperiores deserunt consectetur. Rem distinctio libero amet molestias saepe vero!
+Visualising data for a web audience. Often using the d3 framework.
 </p>
         </div>
       </div>
@@ -135,15 +159,15 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, quia magni ipsum 
         </div>
 		 
         <div class="grid__item one-whole lap-two-thirds">
-         <h2 class="title">Speak no evil</h2>
+         <h2 class="title">Fun stuff</h2>
 <hr>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus officia iusto reiciendis quae quod consequuntur tempora. Rem, placeat laboriosam perferendis eum obcaecati illo iste molestias? Optio in expedita dolor!
+I blog about things <a href="/blog">here,</a> play sport, run marathons, swim in the ocean, climb big mountains and try to travel as much as possible. 
 </p>
         </div>
       </div>
     </div>
-  </div>
+  </div> &#8211;>
 </div>
 
 
@@ -174,6 +198,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus repellendus o
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
 <script defer src="/javascripts/octopress.js"></script>
+<script src="/javascripts/tree-grow.js"></script>
 
 
 
