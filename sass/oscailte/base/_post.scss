@@ -2,6 +2,10 @@ $meta-color: lighten($text-color, 20%);
 
 article {
 
+  p {
+  font-size: 1.2em;
+  }
+
   blockquote {
     @extend .clearfix;
     border-left: 2px solid $primary-color;
