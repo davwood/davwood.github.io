@@ -1,18 +1,44 @@
-<div class="hero" style="background-image: url('/images/swiss-alps-2012.png');">
+<!-- <div class="hero" style="background-image: url('/images/swiss-alps-2012.png');"> -->
+<div class="home-section sydney">
   <div class="grid-wrapper">
-    <div class="grid flex">
-      <div class="grid__item flex__item two-fifths palm-one-whole avatar">
-        <img class="gravatar" src="/images/gravatar.jpg" alt="{{ site.author }}'s Picture"{% if site.email and site.gravatar != false %} data-gravatar="{{ site.email }}"{% endif %}>
+    <div class=" grid flex">
+      <div class="grid__item flex__item two-fifths lap-one-whole palm-one-whole">
+        <div id="tree">
+          <p></p>
+        </div>
+        <h3>I make websites and visualise data. I live in Sydney, Australia. 
+          I write about things <a href="{{ root_url }}/blog">here.</a></h3> 
       </div>
-      <div class="grid__item flex__item three-fifths palm-one-whole">
-      {% include custom/welcome.html %}
+      <div id="sydney" class="grid__item flex__item three-fifths lap-one-whole palm-one-whole">
       </div>
     </div>
   </div>
-
-  <div class="credit">
-    <p>
-      Swiss Alps 2012
-    </p>
+</div>
+<div class="home-section worldmap">
+  <div class="grid-wrapper">
+    <div class=" grid flex">
+      <div id="worldmap" class="grid__item flex__item three-fifths palm-one-whole">
+      </div>
+      <div class="grid__item flex__item two-fifths palm-one-whole">
+        <h4>Data visualisation </h4>
+        <p>I enjoy telling stories with data. Often using the excellent d3 javascript library.</p>
+      </div>
+    </div>
   </div>
 </div>
+<div class="home-section sublime">
+  <div class="grid-wrapper">
+    <div class=" grid flex">
+      <div class="grid__item flex__item two-fifths palm-one-whole">
+        <h4>Web development</h4>
+        <p>Web development with a focus on the ruby on rails framework. 
+          A fun, modern and fast way to craft software. </p>
+      </div>
+      <div id="sublime" class="grid__item flex__item three-fifths palm-one-whole">
+        <p>hi</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
