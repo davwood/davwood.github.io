@@ -4,7 +4,7 @@
   <title><![CDATA[Category: technical,spree,heroku,ruby-on-rails | Coding Around]]></title>
   <link href="http://davwood.github.io/blog/categories/technical-spree-heroku-ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://davwood.github.io/"/>
-  <updated>2014-04-14T19:52:22+10:00</updated>
+  <updated>2014-04-14T20:09:15+10:00</updated>
   <id>http://davwood.github.io/</id>
   <author>
     <name><![CDATA[Dave Wood]]></name>
@@ -161,7 +161,7 @@ Follow the steps below.</p>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>heroku run rails console
-</span><span class='line'>user = Spree::User.create!(:email => “&lt;a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#97;&#x64;&#x6d;&#105;&#x6e;&#64;&#114;&#117;&#110;&#x67;&#x61;&#122;&#x65;&#x6c;&#108;&#x61;&#46;&#x63;&#111;&#x6d;">&#97;&#x64;&#109;&#105;&#x6e;&#64;&#114;&#117;&#110;&#x67;&#97;&#122;&#101;&#x6c;&#108;&#97;&#x2e;&#x63;&#111;&#x6d;&lt;/a>", :password => &ldquo;yourpassword&rdquo;)
+</span><span class='line'>user = Spree::User.create!(:email => “&lt;a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x61;&#x64;&#109;&#x69;&#110;&#64;&#114;&#117;&#x6e;&#x67;&#x61;&#x7a;&#101;&#108;&#108;&#97;&#x2e;&#99;&#x6f;&#109;">&#97;&#x64;&#x6d;&#105;&#x6e;&#x40;&#114;&#117;&#x6e;&#103;&#97;&#x7a;&#x65;&#x6c;&#108;&#97;&#x2e;&#x63;&#111;&#109;&lt;/a>", :password => &ldquo;yourpassword&rdquo;)
 </span><span class='line'>user.spree_roles.create!(:name => &ldquo;admin&rdquo;)</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
