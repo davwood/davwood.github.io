@@ -1,8 +1,23 @@
 @import 'oscailte/oscailte';
 
+.myname {
+	height: 200px;
+	background-color: #0D242B;
+}
+
+#myname {
+	margin-top: 65px;
+	text-align: center;
+	h1 {
+	color: white;
+	}
+}
+
+.home-section {
+	margin-top: 40px;
+}
 
 #sydney {
-	margin-top: 40px;
 	height: 280px;
 	background-image: url('/images/sydney-skyline.png');
 	background-repeat: no-repeat;
@@ -10,15 +25,38 @@
 }
 
 #worldmap {
-	margin-top: 40px;
 	height: 280px;
 	background-image: url('/images/world-image.png');
 	background-repeat: no-repeat;
 }
 
 #sublime {
-	margin-top: 40px;
 	height: 280px;
 	background-image: url('/images/sublime.png');
 	background-repeat: no-repeat;
+}
+
+.hometext {
+	margin-top: 25px;
+}
+
+.hometext p {
+	font-size: 1.6em;
+}
+
+.line {
+	margin-top: 40px;
+}
+.myimage {
+	float: right;
+	margin: 5px 60px 15px 15px; 
+
+}
+
+.myimage img {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 5px solid #3b6fff;
+    text-align: center
 }

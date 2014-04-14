@@ -1,5 +1,5 @@
 var width = 440,
-    height = 310;
+    height = 280;
 
 var svg = d3.select("#tree").append("svg")
     .attr("width", width)
