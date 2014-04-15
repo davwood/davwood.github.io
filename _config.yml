@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: davwood
 disqus_show_comment_count: false
 
 # Google Analytics
@@ -111,3 +111,4 @@ social:
   stackoverflow:
   twitter: "davewood321"
   youtube:
+
